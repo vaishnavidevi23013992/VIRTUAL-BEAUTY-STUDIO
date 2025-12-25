@@ -1,10 +1,49 @@
-<html>
-  <head>
-    <title>
-      My Project
-    </title>
-  </head>
-  <body>
-    <h1> My Project </h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Beauty Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Virtual Beauty Studio</h1>
+            <p>AI-Powered Makeup Trial</p>
+        </header>
+        <main class="studio-layout">
+            <div class="preview-area">
+                <video class="input_video"></video>
+                <canvas class="output_canvas"></canvas>
+                <div id="loading-spinner" class="spinner">Loading...</div>
+                <div class="controls-overlay">
+                    <button id="toggle-camera" title="Toggle Camera">📷</button>
+                    <button id="toggle-compare" title="Hold to Compare">👁️</button>
+                    <button id="take-screenshot" title="Save">💾</button>
+                </div>
+            </div>
+            <aside class="controls-panel">
+                <div class="control-group">
+                    <h3>Lipstick</h3>
+                    <div class="color-options" id="lip-colors"></div>
+                    <label>Intensity <input type="range" id="lip-intensity" min="0" max="1" step="0.1" value="0.7"></label>
+                </div>
+                <div class="control-group">
+                    <h3>Blush</h3>
+                    <div class="color-options" id="blush-colors"></div>
+                    <label>Intensity <input type="range" id="blush-intensity" min="0" max="1" step="0.1" value="0.5"></label>
+                </div>
+                <div class="control-group">
+                    <h3>Eye Shadow</h3>
+                    <div class="color-options" id="eye-colors"></div>
+                    <label>Intensity <input type="range" id="eye-intensity" min="0" max="1" step="0.1" value="0.4"></label>
+                </div>
+            </aside>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
